@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand">Learned Testing Tools Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/tools}">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Create Tool</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <h1>List Students</h1>
+        <div class="row">
+            <div class="col-lg-3">
+                <a type="button" th:href="@{/tools/new}" class="btn btn-primary btn-sm mb-3">Add Tool</a>
+            </div>
+        </div>
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"> Name</th>
+                <th scope="col"> Difficulty</th>
+                <th scope="col">Language</th>
+                <th scope="col">Learned</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tool: ${tools}">
+                <th scope="row" th:text="${tool.getId()}"></th>
+                <td th:text="${tool.getName()}"></td>
+                <td th:text="${tool.getDifficulty()}"></td>
+                <td th:text="${tool.getLanguage()}"></td>
+                <td th:text="${tool.isLearned()}"></td>
+                <td>
+                    <a type="button" th:href="@{/edit/{id}(id=${tool.getId()})}" class="btn btn-primary">Update</a>
+                    <a type="button" th:href="@{/tools/remove/{id}(id=${tool.getId()})}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
