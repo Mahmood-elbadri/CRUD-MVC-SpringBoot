@@ -22,17 +22,17 @@ This web application allows users to manage their learned testing tools. Users c
 
 Clone this repository and navigate to the project directory.
 
-```bash
-git clone https://github.com/your-username/learned-testing-tools.git
-cd learned-testing-tools
+
+    git clone https://github.com/your-username/learned-testing-tools.git
+    cd learned-testing-tools
 
 ## Build the project using Maven.
 
-cmvn clean install
+    cmvn clean install
 
 ## Run the project using Spring Boot.
-```bash
-mvn spring-boot:run
+
+    mvn spring-boot:run
 
 ## The application will be available at http://localhost:8080.
 
