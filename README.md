@@ -1,6 +1,5 @@
 # Learned Testing Tools Management System
 
-![banner](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
 
 This web application allows users to manage their learned testing tools. Users can view, search, add, update, and delete tools from a table. Each tool has a name, difficulty, language, and learned status.
 
